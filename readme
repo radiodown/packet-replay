@@ -1,0 +1,38 @@
+# Packet Replay
+## Features
+
+- Print Packet dump file
+- Read Packet dump file and send payload in TCP
+- Reassemble TCP Segment and send payload
+- Remove FCS when sending payload
+- Support TCP only
+- Support multiple sessions
+
+## How To Use
+
+If you want to show Packet dump file, use option  '-s' 
+
+```sh
+packet-replay -r <file_path> -s
+```
+
+For sending packet to Network
+
+```sh
+packet-replay -r <file_path> -d <dest ip>
+```
+
+If you want to specify packet's port 
+```sh
+packet-replay -r <file_path> -d <dest ip> -p <dest port>
+```
+
+#### Build
+```sh
+make
+```
+
+## License
+MIT
+
+

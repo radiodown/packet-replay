@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "logger.h": "c",
+        "tcp.h": "c",
+        "ether.h": "c",
+        "options.h": "c",
+        "type_traits": "c",
+        "cmath": "c",
+        "limits": "c",
+        "select.h": "c",
+        "syshead.h": "c"
+    }
+}
