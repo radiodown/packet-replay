@@ -48,13 +48,13 @@ void usage()
 {
     printf("\n");
     printf("General Options:\n");
-    //printf("-m   : choose operation Mode (server, client)\n");
+    // printf("-m   : choose operation Mode (server, client)\n");
     printf("-r   : Read tcpdump file\n");
     printf("-d   : specify Destination ip Address\n");
     printf("-p   : specify destination Port\n");
-    //printf("-o   : Output options (1: console, 2: file, 4: syslog)\n");
-    //printf("-l   : set log Level\n");
-    //printf("-f   : log File path\n");
+    // printf("-o   : Output options (1: console, 2: file, 4: syslog)\n");
+    // printf("-l   : set log Level\n");
+    // printf("-f   : log File path\n");
     printf("-s   : Show packet dump\n");
     printf("-v   : show copyright and Version\n");
     printf("\n");
@@ -126,7 +126,7 @@ int add_options(options *o, char *p[])
     }
     else if (strcmp("s", p[0]) == 0)
     {
-       o->show = 1;
+        o->show = 1;
     }
     else
     {
@@ -138,11 +138,15 @@ int add_options(options *o, char *p[])
 
 int check_options(options *o)
 {
-    if (o->file == NULL)
-    {
-        return 1;
+    if (o->mode){
+        if(o->port){
+            return 0;
+        }else{
+            return 1;
+        }
     }
-    return 0;
+    
+    return o->file == NULL;
 }
 
 int parse_argv(options *o, int argc, char **argv)

@@ -13,6 +13,8 @@
 
 #include <errno.h>
 
+#include <pthread.h>
+
 /* tcp header */
 #include <netinet/tcp.h>
 
@@ -24,6 +26,9 @@
 
 /* FD_set */
 #include <sys/select.h>
+
+/* listen */
+#include <sys/socket.h>
 
 /* O flag */
 #include <fcntl.h>
